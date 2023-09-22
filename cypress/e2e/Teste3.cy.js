@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-describe('Login - Teste', ()=>{
+describe('Login - Teste 1', ()=>{
     beforeEach(() => {
         cy.visit('http://localhost:3000/')
     })
