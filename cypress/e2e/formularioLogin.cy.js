@@ -1,7 +1,19 @@
 /* eslint-disable no-undef */
 describe('Formulario de Login', ()=>{
 
-  it.only('Deve acessar a pagina home', ()=>{
+  it.only('Deve acessar a pagina home',()=>{
+    cy.fixture('usuarios').then(usuario =>{
+      cy.login(usuario[0].email, usuario[0].senha)
+      cy.visit('/home')
+
+      cy.url().should('include', '/home')
+      cy.getByData('titulo-boas-vindas').should('contain', 'Bem vindo de volta!')
+
+      cy.contains(usuario[0].nome).should('be.visible')
+    })
+  })
+
+  it('Deve acessar a pagina home', ()=>{
     cy.login('neilton@alura.com', '123456')
     cy.visit('/home')
     cy.getByData('titulo-boas-vindas').should('contain', 'Bem vindo de volta!')
