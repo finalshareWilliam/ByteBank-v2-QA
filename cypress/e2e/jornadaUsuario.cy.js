@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 describe('Jornadas de usuário', () => {
   it('Deve permitir que a pessoa usuária acesse a aplicação, realize uma transação e faça um logout', () => {
     cy.visit('/');

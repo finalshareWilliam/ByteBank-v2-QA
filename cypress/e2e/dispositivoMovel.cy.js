@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 describe('Testando dispositivos móveis', () => {
   it('Deve existir um botão menu burguer', () => {
     cy.visit('/');
